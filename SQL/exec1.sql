@@ -8,4 +8,4 @@ SELECT COUNT(1) AS ContadorDeRegistros, b.dsStatus AS Descricao
 FROM tb_Processo a
     INNER JOIN tb_Status b on a.idStatus = b.idStatus
 GROUP BY b.dsStatus
-ORDER BY ContadorDeRegistros DESC
+ORDER BY ContadorDeRegistros DESC   
