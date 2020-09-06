@@ -1,14 +1,9 @@
 /*
+Possuímos um número de identificação do processo, onde o mesmo contem 12 caracteres 
+com zero à esquerda, contudo nosso modelo e dados ele é apresentado como bigint. Como 
+fazer para apresenta-lo com 12 caracteres considerando os zeros a esquerda? 
+  */
 
-Com base no modelo acima, construa um comando SQL que liste a quantidade de Data de 
-Encerramento agrupada por ela mesma com a quantidade da contagem seja maior que 5. 
- */
 
-
-
-SELECT *
-FROM ( SELECT count(1) QtdEncerramento, a.DtEncerramento
-  FROM tb_Processo a
-  GROUP BY DtEncerramento		) A
-WHERE A.QtdEncerramento > 5
-
+SELECT REPLICATE('0', 12 - LEN(nroProcesso)) + CONVERT(VARCHAR(12), nroProcesso)
+FROM tb_Processo
