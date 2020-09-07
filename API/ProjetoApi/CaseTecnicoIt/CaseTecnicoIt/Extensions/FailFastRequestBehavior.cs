@@ -3,7 +3,9 @@ using FluentValidation;
 using FluentValidation.Results;
 using MediatR;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
+
 
 namespace CaseTecnicoIt.Extensions
 {
@@ -11,16 +13,14 @@ namespace CaseTecnicoIt.Extensions
     {
 
         public class ValidationRequestBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-          where TRequest : IRequest<TResponse> where TResponse : Response
+            where TRequest : IRequest<TResponse> where TResponse : Response
         {
             private readonly IEnumerable<IValidator> _validators;
 
             public ValidationRequestBehavior(IEnumerable<IValidator<TRequest>> validators)
             {
                 _validators = validators;
-            }
-
-           
+            }  
 
             private static Task<TResponse> Errors(IEnumerable<ValidationFailure> failures)
             {
@@ -32,10 +32,9 @@ namespace CaseTecnicoIt.Extensions
                 }
 
                 return Task.FromResult(response as TResponse);
-
-
-
             }
+
+
         }
     }
 }

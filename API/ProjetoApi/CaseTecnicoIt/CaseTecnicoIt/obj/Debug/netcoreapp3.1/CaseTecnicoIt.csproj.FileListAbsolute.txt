@@ -42,3 +42,15 @@ D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\Cas
 D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\bin\Debug\netcoreapp3.1\MediatR.dll
+D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\bin\Debug\netcoreapp3.1\FluentValidation.dll
+D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\bin\Debug\netcoreapp3.1\Dapper.dll
+D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
+D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\obj\Debug\netcoreapp3.1\CaseTecnicoIt.csproj.CoreCompileInputs.cache
+D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\obj\Debug\netcoreapp3.1\CaseTecnicoIt.MvcApplicationPartsAssemblyInfo.cs
+D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\obj\Debug\netcoreapp3.1\CaseTecnicoIt.MvcApplicationPartsAssemblyInfo.cache

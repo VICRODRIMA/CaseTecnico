@@ -1,20 +1,19 @@
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Threading.Tasks;
+
+
+using CaseTecnicoIt.Domain.Interfaces;
 using CaseTecnicoIt.Extensions.CaseTecnicoIt.Extensions;
+using CaseTecnicoIt.Infra.Data.Repositories;
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Localization;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using System;
+using System.Globalization;
+using static CaseTecnicoIt.Extensions.FailFastRequestBehavior;
 
 namespace CaseTecnicoIt
 {
@@ -35,6 +34,9 @@ namespace CaseTecnicoIt
 
             // SWAGGER
             services.AddSwagger();
+            AddMediatr(services);
+            // Injecao de dependecia
+            services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddControllers();
         }
 
@@ -68,7 +70,7 @@ namespace CaseTecnicoIt
         }
         private static void AddMediatr(IServiceCollection services)
         {
-            const string applicationAssemblyName = "Demo";
+            const string applicationAssemblyName = "CaseTecnicoIT";
             var assembly = AppDomain.CurrentDomain.Load(applicationAssemblyName);
 
             AssemblyScanner
