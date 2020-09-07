@@ -41,6 +41,4 @@ D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\Cas
 D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\obj\Debug\netcoreapp3.1\CaseTecnicoIt.csproj.CopyComplete
 D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
-D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\obj\Debug\netcoreapp3.1\CaseTecnicoIt.csproj.CoreCompileInputs.cache
-D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\obj\Debug\netcoreapp3.1\CaseTecnicoIt.MvcApplicationPartsAssemblyInfo.cs
-D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\obj\Debug\netcoreapp3.1\CaseTecnicoIt.MvcApplicationPartsAssemblyInfo.cache
+D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\bin\Debug\netcoreapp3.1\MediatR.dll
