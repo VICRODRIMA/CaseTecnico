@@ -1,5 +1,6 @@
 ﻿using CaseTecnicoIt.Domain.Interfaces;
 using CaseTecnicoIt.Domain.Models;
+using CaseTecnicoIt.Infra.Data.Repositories.Statements;
 using Dapper;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -24,12 +25,14 @@ namespace CaseTecnicoIt.Infra.Data.Repositories
             {
                 using (var conn = GetConnection())
                 {
-                    await conn.ExecuteAsync("",
+                    await conn.ExecuteAsync(locacaoStatement.Inserir,
                         new
                         {
-                            film.idLocacao,
+                            film.idLocador,
                             film.idCliente,
-                            film.dtLocacao
+                            film.idFilme,
+                            film.dtLocacao,
+                            film.dtDevolucao
                         });
                 }
             }

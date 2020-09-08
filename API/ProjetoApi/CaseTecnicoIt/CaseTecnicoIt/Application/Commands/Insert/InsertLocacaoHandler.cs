@@ -19,16 +19,23 @@ namespace CaseTecnicoIt.Application.Commands.Insert
             _logger = logger;
             _locacaoRepository = locacaoRepository;
         }
-        public async Task<Response> Handle(InsertFilme request, CancellationToken cancellationToken)
+        public async Task<Response> Handle(InsertLocacao request, CancellationToken cancellationToken)
         {
             Response response = new Response();
 
-            _logger.LogInformation($"Iniciando o Handle de obter o filme: {request.nomeFilme}");
+            _logger.LogInformation($"Iniciando o Handle de insercao locacao: {request.idLocador}");
 
             var locaca = new Locacao
             {
-               
+
+                idLocador = request.idLocador,
+                idCliente = request.idCliente,
+                idFilme = request.idFilme,
+                dtDevolucao = request.dtDevolucao
+
             };
+
+
 
             await _locacaoRepository.criarLocacao(locaca);
 

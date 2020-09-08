@@ -30,6 +30,8 @@ namespace CaseTecnicoIt.Application.Queries.ListaFilmes
             if (filme is null)
                 response.AddError("Filme não existe");
 
+            response = new Response(filme);
+
             return response;
         }
     }

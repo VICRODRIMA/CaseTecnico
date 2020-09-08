@@ -31,10 +31,10 @@ namespace CaseTecnicoIt.Infra.Data.Repositories
             {
                 using (var conn = GetConnection())
                 {
-                    await conn.ExecuteAsync("",
+                    await conn.ExecuteAsync(filmeStatement.Inserir,
                         new
                         {
-                            film.idFilme,
+                            
                             film.nomeFilme,
                             film.anoLancamento
                         });
@@ -53,7 +53,7 @@ namespace CaseTecnicoIt.Infra.Data.Repositories
             {
                 using (var conn = GetConnection())
                 {
-                    //MoviesStatament.Atualizar
+                    
                     await conn.ExecuteAsync(filmeStatement.Atualizar,
                         new
                         {

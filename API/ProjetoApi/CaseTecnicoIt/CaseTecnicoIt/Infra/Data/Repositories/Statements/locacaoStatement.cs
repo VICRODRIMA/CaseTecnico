@@ -5,17 +5,16 @@ using System.Threading.Tasks;
 
 namespace CaseTecnicoIt.Infra.Data.Repositories.Statements
 {
-    internal static class filmeStatement
+    public class locacaoStatement
     {
         public static string Atualizar = $@"
-        UPDATE filmes SET
-	        nomeFilme = @nomeFilme,
-            anolancamento = @anoLancamento
-        WHERE idFilme = @idFilme";
+        UPDATE locacao SET
+	        nomeCliente = @nomeCliente
+        WHERE idCliente = @idCliente";
 
         public static string Inserir = $@"
-        INSERT INTO filmes (nomeFilme, AnoLancamento)  VALUES  (
-                    @nomeCliente, @anoLancamento
+        INSERT INTO locacao (nomeCliente)  VALUES  (
+                    @nomeCliente
                             )";
     }
 }

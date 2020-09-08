@@ -19,12 +19,14 @@ namespace CaseTecnicoIt.Application.Queries.ListaLocacoes
         {
             Response response = new Response();
 
-            _logger.LogInformation($"Iniciando o Handle de obter um filme por ID: {request.Id}");
+            _logger.LogInformation($"Iniciando o Handle de obter um locacao por ID: {request.Id}");
 
-            var filme = await _locacaoRepository.buscaLocacaoID(request.Id);
+            var loca = await _locacaoRepository.buscaLocacaoID(request.Id);
 
-            if (filme is null)
-                response.AddError("Filme não existe");
+            if (loca is null)
+                response.AddError("Locacao não existe");
+
+            response = new Response(loca);
 
             return response;
         }
