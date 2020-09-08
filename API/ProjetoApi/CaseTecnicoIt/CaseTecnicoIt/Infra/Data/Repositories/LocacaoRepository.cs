@@ -19,12 +19,38 @@ namespace CaseTecnicoIt.Infra.Data.Repositories
         public async Task<Locacao> buscaLocacaoID(string id)
          => await GetConnection().QueryFirstOrDefaultAsync<Locacao>("select * from Locacao where idLocacao = @id", new { id });
 
-        private async Task ExecutarRegistrar(Locacao film)
+
+        public async Task AtualizaLocacao(Locacao client) => await ExecutarAtualizar(client);
+
+        private async Task ExecutarAtualizar(Locacao client)
         {
             try
             {
                 using (var conn = GetConnection())
                 {
+                    //MoviesStatament.Atualizar
+                    await conn.ExecuteAsync(locacaoStatement.Atualizar,
+                        new
+                        {
+                            client.idLocacao,
+                            client.dtDevolucao
+                        });
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, "Falha ao atualizar o cliente.");
+                throw;
+            }
+        }
+
+
+        private async Task ExecutarRegistrar(Locacao film)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {   
                     await conn.ExecuteAsync(locacaoStatement.Inserir,
                         new
                         {
