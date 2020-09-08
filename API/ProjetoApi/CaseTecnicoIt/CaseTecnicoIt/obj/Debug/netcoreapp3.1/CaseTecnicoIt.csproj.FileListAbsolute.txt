@@ -54,3 +54,4 @@ D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\Cas
 D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\obj\Debug\netcoreapp3.1\CaseTecnicoIt.MvcApplicationPartsAssemblyInfo.cs
 D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\obj\Debug\netcoreapp3.1\CaseTecnicoIt.MvcApplicationPartsAssemblyInfo.cache
 D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Versioning.dll
+D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\obj\Debug\netcoreapp3.1\CaseTecnicoIt.csprojAssemblyReference.cache

@@ -8,9 +8,6 @@
     using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
-
-
-
     public class ListaClienteHandler : IRequestHandler<ListaClienteporIdQuery, Response>
     {
         private readonly ILogger<ListaClienteHandler> _logger;

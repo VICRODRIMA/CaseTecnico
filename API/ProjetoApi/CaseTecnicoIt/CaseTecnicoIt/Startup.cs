@@ -37,6 +37,8 @@ namespace CaseTecnicoIt
             AddMediatr(services);
             // Injecao de dependecia
             services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<IFilmesRepository, FilmesRepository>();
+            //services.AddScoped<ILocacaoRepository, LocacaoRepository>();
             services.AddControllers();
         }
 
