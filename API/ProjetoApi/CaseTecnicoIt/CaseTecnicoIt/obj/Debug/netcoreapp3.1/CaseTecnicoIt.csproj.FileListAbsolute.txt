@@ -27,7 +27,6 @@ D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\Cas
 D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\bin\Debug\netcoreapp3.1\CaseTecnicoIt.runtimeconfig.dev.json
 D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\bin\Debug\netcoreapp3.1\CaseTecnicoIt.dll
 D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\bin\Debug\netcoreapp3.1\CaseTecnicoIt.pdb
-D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\obj\Debug\netcoreapp3.1\CaseTecnicoIt.csprojAssemblyReference.cache
 D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\obj\Debug\netcoreapp3.1\CaseTecnicoIt.AssemblyInfoInputs.cache
 D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\obj\Debug\netcoreapp3.1\CaseTecnicoIt.AssemblyInfo.cs
 D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\obj\Debug\netcoreapp3.1\CaseTecnicoIt.RazorTargetAssemblyInfo.cache
@@ -54,3 +53,4 @@ D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\Cas
 D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\obj\Debug\netcoreapp3.1\CaseTecnicoIt.csproj.CoreCompileInputs.cache
 D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\obj\Debug\netcoreapp3.1\CaseTecnicoIt.MvcApplicationPartsAssemblyInfo.cs
 D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\obj\Debug\netcoreapp3.1\CaseTecnicoIt.MvcApplicationPartsAssemblyInfo.cache
+D:\Usuarios\Victor\Development\Projetos\Case Itau\CaseTecnico\API\ProjetoApi\CaseTecnicoIt\CaseTecnicoIt\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Versioning.dll

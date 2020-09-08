@@ -47,15 +47,23 @@
             },
             "FluentValidation": {
               "target": "Package",
-              "version": "[9.2.0, )"
+              "version": "[8.6.2, )"
             },
             "MediatR": {
               "target": "Package",
-              "version": "[8.1.0, )"
+              "version": "[8.0.1, )"
             },
             "MediatR.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
-              "version": "[8.1.0, )"
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Versioning": {
+              "target": "Package",
+              "version": "[4.1.1, )"
+            },
+            "Microsoft.AspNetCore.StaticFiles": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

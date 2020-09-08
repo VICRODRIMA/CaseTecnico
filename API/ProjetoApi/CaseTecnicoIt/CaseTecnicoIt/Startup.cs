@@ -70,7 +70,7 @@ namespace CaseTecnicoIt
         }
         private static void AddMediatr(IServiceCollection services)
         {
-            const string applicationAssemblyName = "CaseTecnicoIT";
+            const string applicationAssemblyName = "CaseTecnicoIt";
             var assembly = AppDomain.CurrentDomain.Load(applicationAssemblyName);
 
             AssemblyScanner
