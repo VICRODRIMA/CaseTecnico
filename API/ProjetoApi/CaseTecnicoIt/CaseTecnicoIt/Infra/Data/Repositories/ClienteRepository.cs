@@ -21,6 +21,8 @@ namespace CaseTecnicoIt.Infra.Data.Repositories
         public async Task CriarCliente(Cliente client) => await ExecutarRegistrar(client);
 
         public async Task AtualizarCliente(Cliente client) => await ExecutarAtualizar(client);
+        public async Task<Cliente> ListaClientes()
+        => await GetConnection().QueryFirstOrDefaultAsync<Cliente>("select * from clientes");
 
         public async Task<Cliente> BuscaporId(string id)
          => await GetConnection().QueryFirstOrDefaultAsync<Cliente>("select * from clientes where idcliente = @id", new { id });

@@ -21,16 +21,32 @@ namespace CaseTecnicoIt.Controllers
         {
             _mediator = mediator;
         }
+        //[HttpGet]
+        //public IEnumerable<Cliente> Get()
+        //{
+        //    var rng = new Random();
+        //    return Enumerable.Range(1, 5).Select(index => new Cliente
+        //    {
+        //        nomeCliente = "sdfsdfsdf"
+        //    })
+        //    .ToArray();
+        //}
+
         [HttpGet]
-        public IEnumerable<Cliente> Get()
+     
+        public async Task<IEnumerable <Cliente>> Get(string id)
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new Cliente
+            var response = await _mediator.Send(new ListaClienteQuery());
+
+            if (response.HasMessages)
             {
-                nomeCliente = "sdfsdfsdf"
-            })
-            .ToArray();
+                return (IEnumerable<Cliente>)BadRequest(response.Errors);
+            }
+
+
+            return Ok(response.Result);
         }
+
 
 
         [HttpGet]
