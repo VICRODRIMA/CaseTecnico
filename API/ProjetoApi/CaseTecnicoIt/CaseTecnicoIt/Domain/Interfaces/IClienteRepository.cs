@@ -12,7 +12,6 @@ namespace CaseTecnicoIt.Domain.Interfaces
         Task AtualizarCliente(Cliente client);
         Task<Cliente> BuscaporId(string id);
         Task<Cliente> BuscaporNome(string nomeCliente);
-        //Task<Cliente> ListaClientes();
 
     }
 }

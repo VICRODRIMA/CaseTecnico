@@ -14,11 +14,11 @@ namespace CaseTecnicoIt.Infra.Data.Repositories
             : base(logger.CreateLogger<LocacaoRepository>(), connectionString)
         {
         }
-        public async Task criarLocacao(Locacoes locacao) => await ExecutarRegistrar(locacao);
-        public async Task<Locacoes> buscaLocacaoID(string id)
-         => await GetConnection().QueryFirstOrDefaultAsync<Locacoes>("select * from Locacoes where idLocacao = @id", new { id });
+        public async Task criarLocacao(Locacao locacao) => await ExecutarRegistrar(locacao);
+        public async Task<Locacao> buscaLocacaoID(string id)
+         => await GetConnection().QueryFirstOrDefaultAsync<Locacao>("select * from Locacao where idLocacao = @id", new { id });
 
-        private async Task ExecutarRegistrar(Locacoes film)
+        private async Task ExecutarRegistrar(Locacao film)
         {
             try
             {

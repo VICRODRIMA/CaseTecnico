@@ -14,24 +14,16 @@ namespace CaseTecnicoIt.Controllers
     [ApiController]
     public class LocacaoController : ControllerBase
     {
-        private readonly IMediator _mediator;
-        [HttpGet]
-        public IEnumerable<Locacoes> Get()
+        public LocacaoController(IMediator mediator)
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new Locacoes
-            {
-                idLocacao = 2,
-                idCliente=  2,
-                dtLocacao = DateTime.Now.ToLongDateString()
-            })
-            .ToArray();
+            _mediator = mediator;
         }
+        private readonly IMediator _mediator;
 
 
         [HttpGet]
-        [Route("{id}")]
-        public async Task<IActionResult> ListaClienteID(string id)
+        [Route("ListaLocacaoID")]
+        public async Task<IActionResult> ListaLocacaoID(string id)
         {
             var response = await _mediator.Send(new ListaLocacoesporIDQuery(id));
 
@@ -41,6 +33,18 @@ namespace CaseTecnicoIt.Controllers
             }
 
 
+            return Ok(response.Result);
+        }
+
+        [HttpPost]
+        [Route("/CriarLocacoes")]
+        public async Task<IActionResult> criarLocacoes(int idLocador, int idFilme, int idCliente, string dtDevolucao)
+        {
+            var response = await _mediator.Send(new InsereLocacao(idLocador,  idFilme,  idCliente,  dtDevolucao));
+            if (response.HasMessages)
+            {
+                return BadRequest(response.Errors);
+            }
             return Ok(response.Result);
         }
     }

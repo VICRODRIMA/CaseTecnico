@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CaseTecnicoIt.Domain.Interfaces
 {
-    public interface ILocacaoRepository
+    public interface ILocadoraRepository
     {
-        Task criarLocacao(Locacao locacao);
-        Task<Locacao> buscaLocacaoID(string id);
+        Task criarLocacao(Locacoes locacao);
+        Task<Locacoes> buscaLocacaoID(string id);
     }
 }
