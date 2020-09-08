@@ -1,6 +1,7 @@
 
 
 using CaseTecnicoIt.Domain.Interfaces;
+using CaseTecnicoIt.Domain.Models;
 using CaseTecnicoIt.Extensions.CaseTecnicoIt.Extensions;
 using CaseTecnicoIt.Infra.Data.Repositories;
 using FluentValidation;
@@ -8,6 +9,7 @@ using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -32,13 +34,15 @@ namespace CaseTecnicoIt
         public void ConfigureServices(IServiceCollection services)
         {
 
+
+          //  services.AddDbContext<ApiContext>(opt => opt.UseInMemoryDatabase(databaseName: "FakeBD"));
             // SWAGGER
             services.AddSwagger();
             AddMediatr(services);
             // Injecao de dependecia
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IFilmesRepository, FilmesRepository>();
-            //services.AddScoped<ILocacaoRepository, LocacaoRepository>();
+            services.AddScoped<ILocacaoRepository, LocacaoRepository>();
             services.AddControllers();
         }
 
@@ -65,6 +69,9 @@ namespace CaseTecnicoIt
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("v1/swagger.json", "v1"));
 
+           // var context = app.ApplicationServices.GetService<ApiContext>();
+          //  DadosFake(context);
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
@@ -83,5 +90,21 @@ namespace CaseTecnicoIt
 
             services.AddMediatR(assembly);
         }
+
+
+
+        private static void DadosFake(ApiContext context)
+        {
+            var testecliente = new Cliente
+            {
+                IdCliente = Guid.NewGuid(),
+                nomeCliente = "victor"
+            };
+
+            context.clientes.Add(testecliente);
+
+            context.SaveChanges();
+        }
+
     }
 }

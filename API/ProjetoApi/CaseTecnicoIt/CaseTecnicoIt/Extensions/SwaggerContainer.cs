@@ -26,7 +26,7 @@
                         {
                             Url = new Uri(repo),
                             Name = "Victor Matos",
-                            Email = "vicrodrimap@gmail.com"
+                            Email = "vicrodrima@gmail.com"
                         }
                     });
                 });

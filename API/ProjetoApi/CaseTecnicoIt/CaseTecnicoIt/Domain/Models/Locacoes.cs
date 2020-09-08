@@ -9,7 +9,7 @@ namespace CaseTecnicoIt.Domain.Models
     {
         public Guid idLocacao { get; set; }
         public int idCliente { get; set; }
-        public DateTime dtLocacao { get; set; }
+        public string dtLocacao { get; set; }
 
     }
 }

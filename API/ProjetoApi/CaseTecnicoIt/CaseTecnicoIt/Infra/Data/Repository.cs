@@ -19,6 +19,8 @@ namespace CaseTecnicoIt.Infra.Data
         protected string ConnectionString => _connectionString.Value.SqlConnection;
 
         protected IDbConnection GetConnection() => new SqlConnection(ConnectionString);
+
+
     }
 
 }
