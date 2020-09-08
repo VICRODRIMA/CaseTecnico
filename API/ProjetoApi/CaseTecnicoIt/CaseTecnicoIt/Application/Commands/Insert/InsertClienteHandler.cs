@@ -3,45 +3,34 @@ using CaseTecnicoIt.Domain.Models;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace CaseTecnicoIt.Application.Commands.Insert
 {
-    public class InsertClienteHandler : IRequestHandler<InsertClienteHandler, Response>
+    public class InsertClienteHandler : IRequestHandler<InsertCliente, Response>
     {
         private readonly ILogger<InsertClienteHandler> _logger;
         private readonly IClienteRepository _clienteRepository;
-
-
-
         public InsertClienteHandler(ILogger<InsertClienteHandler> logger, IClienteRepository clienteRepository)
         {
             _logger = logger;
             _clienteRepository = clienteRepository;
         }
-        public async Task<Response> Handle(InsertClienteHandler request, CancellationToken cancellationToken)
+        public async Task<Response> Handle(InsertCliente request, CancellationToken cancellationToken)
         {
             Response response = new Response();
 
-            _logger.LogInformation($"Iniciando o Handle de inserção um cliente");
+            _logger.LogInformation($"Iniciando o Handle de obter um cliente por ID: {request.nomeCliente}");
 
-            var client = new Cliente()
+            var testecliente = new Cliente
             {
-                IdCliente = Guid.NewGuid(),
-                nomeCliente = "victor"
+                nomeCliente = request.nomeCliente
             };
 
-            await _clienteRepository.CriarCliente(client);
-
-
+            await _clienteRepository.CriarCliente(testecliente);
 
             return response;
         }
-
-
-
     }
 }

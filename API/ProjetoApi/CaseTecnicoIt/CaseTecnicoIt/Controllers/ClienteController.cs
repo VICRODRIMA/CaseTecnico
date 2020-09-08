@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CaseTecnicoIt.Application.Commands.Insert;
 using CaseTecnicoIt.Application.Queries.ListaCliente;
 using CaseTecnicoIt.Domain.Models;
 using MediatR;
@@ -16,14 +17,16 @@ namespace CaseTecnicoIt.Controllers
     {
         private readonly IMediator _mediator;
 
-
+        public ClienteController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
         [HttpGet]
         public IEnumerable<Cliente> Get()
         {
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new Cliente
             {
-                IdCliente = Guid.NewGuid(),
                 nomeCliente = "sdfsdfsdf"
             })
             .ToArray();
@@ -47,20 +50,14 @@ namespace CaseTecnicoIt.Controllers
 
         [HttpPost]
         [Route("/CriarCliente")]
-        public async Task<IActionResult> CriarCliente(Cliente cliente)
+        public async Task<IActionResult> CriarCliente(string cliente)
         {
-            var response = await _mediator.Send(new Criar(cliente);
-
+            var response = await _mediator.Send(new InsertCliente(cliente));
             if (response.HasMessages)
             {
                 return BadRequest(response.Errors);
             }
-
-
             return Ok(response.Result);
         }
-
-
-
     }
 }

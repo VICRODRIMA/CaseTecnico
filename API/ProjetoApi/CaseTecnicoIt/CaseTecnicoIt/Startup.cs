@@ -3,6 +3,7 @@
 using CaseTecnicoIt.Domain.Interfaces;
 using CaseTecnicoIt.Domain.Models;
 using CaseTecnicoIt.Extensions.CaseTecnicoIt.Extensions;
+using CaseTecnicoIt.Infra;
 using CaseTecnicoIt.Infra.Data.Repositories;
 using FluentValidation;
 using MediatR;
@@ -43,6 +44,9 @@ namespace CaseTecnicoIt
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IFilmesRepository, FilmesRepository>();
             services.AddScoped<ILocacaoRepository, LocacaoRepository>();
+
+            services.Configure<ConnectionStringOptions>(connectionStringOptions => connectionStringOptions.SqlConnection = Configuration.GetConnectionString("SqlServerConnection"));
+
             services.AddControllers();
         }
 
@@ -97,7 +101,6 @@ namespace CaseTecnicoIt
         {
             var testecliente = new Cliente
             {
-                IdCliente = Guid.NewGuid(),
                 nomeCliente = "victor"
             };
 

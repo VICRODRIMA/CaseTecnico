@@ -7,7 +7,6 @@ namespace CaseTecnicoIt.Domain.Models
 {
     public class Cliente
     {
-        public Guid IdCliente { get; set; }
         public string nomeCliente { get; set; }
 
     }

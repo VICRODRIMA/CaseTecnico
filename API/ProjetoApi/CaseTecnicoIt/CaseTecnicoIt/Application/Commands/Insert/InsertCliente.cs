@@ -10,11 +10,10 @@ namespace CaseTecnicoIt.Application.Commands.Insert
     {
         public InsertCliente(string nomeClient)
         {
-            idCliente = Guid.NewGuid();
+     
             nomeCliente = nomeClient;
 
         }
-        public Guid idCliente { get; private set; }
         public string nomeCliente { get; private set; }
 
     }

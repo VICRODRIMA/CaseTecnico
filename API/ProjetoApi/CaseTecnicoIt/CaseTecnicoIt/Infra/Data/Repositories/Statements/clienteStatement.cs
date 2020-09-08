@@ -13,6 +13,8 @@ namespace CaseTecnicoIt.Infra.Data.Repositories.Statements
         WHERE idCliente = @Id";
 
         public static string Inserir = $@"
-        INSERT INTO cliente (nomeCliente, idCliente) VALUES  @nomeCliente, @Id";
+        INSERT INTO clientes (nomeCliente)  VALUES  (
+                    @nomeCliente
+                            )";
     }
 }

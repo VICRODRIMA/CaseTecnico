@@ -23,7 +23,7 @@ namespace CaseTecnicoIt.Infra.Data.Repositories
         public async Task AtualizarCliente(Cliente client) => await ExecutarAtualizar(client);
 
         public async Task<Cliente> BuscaporId(string id)
-         => await GetConnection().QueryFirstOrDefaultAsync<Cliente>("select * from cliente where idcliente = @id", new { id });
+         => await GetConnection().QueryFirstOrDefaultAsync<Cliente>("select * from clientes where idcliente = @id", new { id });
 
         private async Task ExecutarRegistrar(Cliente client)
         {
@@ -31,10 +31,9 @@ namespace CaseTecnicoIt.Infra.Data.Repositories
             {
                 using (var conn = GetConnection())
                 {
-                    await conn.ExecuteAsync("",
+                    await conn.ExecuteAsync(clienteStatement.Inserir,
                         new
                         {
-                            client.IdCliente,
                             client.nomeCliente
                         });
                 }
@@ -56,7 +55,6 @@ namespace CaseTecnicoIt.Infra.Data.Repositories
                     await conn.ExecuteAsync(clienteStatement.Atualizar,
                         new
                         {
-                            client.IdCliente,
                             client.nomeCliente
                         });
                 }
