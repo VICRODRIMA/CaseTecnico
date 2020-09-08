@@ -14,6 +14,10 @@ namespace CaseTecnicoIt.Controllers
     [ApiController]
     public class FilmesController : ControllerBase
     {
+        public FilmesController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
         private readonly IMediator _mediator;
         [HttpGet]
         public IEnumerable<Filmes> Get()

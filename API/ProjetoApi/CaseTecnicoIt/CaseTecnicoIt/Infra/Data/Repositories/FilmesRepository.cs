@@ -1,5 +1,6 @@
 ﻿using CaseTecnicoIt.Domain.Interfaces;
 using CaseTecnicoIt.Domain.Models;
+using CaseTecnicoIt.Infra.Data.Repositories.Statements;
 using Dapper;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -17,6 +18,7 @@ namespace CaseTecnicoIt.Infra.Data.Repositories
         {
         }
         public async Task CriarFilme(Filmes film) => await ExecutarRegistrar(film);
+        public async Task AtualizarFilme (Filmes film) => await ExecutarAtualizar(film);
         public async Task<Filmes> BuscaFilmePorId(string id)
          => await GetConnection().QueryFirstOrDefaultAsync<Filmes>("select * from filmes where idFilme = @id", new { id });
 
@@ -38,6 +40,28 @@ namespace CaseTecnicoIt.Infra.Data.Repositories
             catch (Exception ex)
             {
                 Logger.LogError(ex, "Falha ao criar o filme");
+                throw;
+            }
+        }
+        private async Task ExecutarAtualizar(Filmes filme)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    //MoviesStatament.Atualizar
+                    await conn.ExecuteAsync(filmeStatement.Atualizar,
+                        new
+                        {
+                            filme.idFilme,
+                            filme.nomeFilme,
+                            filme.anoLancamento
+                        });
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, "Falha ao atualizar o cliente.");
                 throw;
             }
         }

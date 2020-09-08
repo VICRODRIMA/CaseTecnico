@@ -1,5 +1,6 @@
 ﻿using CaseTecnicoIt.Domain.Interfaces;
 using CaseTecnicoIt.Domain.Models;
+using CaseTecnicoIt.Infra.Data.Repositories.Statements;
 using Dapper;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -18,6 +19,9 @@ namespace CaseTecnicoIt.Infra.Data.Repositories
         }
 
         public async Task CriarCliente(Cliente client) => await ExecutarRegistrar(client);
+
+        public async Task AtualizarCliente(Cliente client) => await ExecutarAtualizar(client);
+
         public async Task<Cliente> BuscaporId(string id)
          => await GetConnection().QueryFirstOrDefaultAsync<Cliente>("select * from cliente where idcliente = @id", new { id });
 
@@ -38,6 +42,28 @@ namespace CaseTecnicoIt.Infra.Data.Repositories
             catch (Exception ex)
             {
                 Logger.LogError(ex, "Falha ao cadastrar o cliente");
+                throw;
+            }
+        }
+
+        private async Task ExecutarAtualizar(Cliente client)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    //MoviesStatament.Atualizar
+                    await conn.ExecuteAsync(clienteStatement.Atualizar,
+                        new
+                        {
+                            client.IdCliente,
+                            client.nomeCliente
+                        });
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, "Falha ao atualizar o cliente.");
                 throw;
             }
         }

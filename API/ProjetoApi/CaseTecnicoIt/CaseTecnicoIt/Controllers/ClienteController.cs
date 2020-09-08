@@ -44,5 +44,23 @@ namespace CaseTecnicoIt.Controllers
 
             return Ok(response.Result);
         }
+
+        [HttpPost]
+        [Route("/CriarCliente")]
+        public async Task<IActionResult> CriarCliente(Cliente cliente)
+        {
+            var response = await _mediator.Send(new ListaClienteporIdQuery(cliente));
+
+            if (response.HasMessages)
+            {
+                return BadRequest(response.Errors);
+            }
+
+
+            return Ok(response.Result);
+        }
+
+
+
     }
 }
