@@ -49,7 +49,7 @@ namespace CaseTecnicoIt.Controllers
         [Route("/CriarCliente")]
         public async Task<IActionResult> CriarCliente(Cliente cliente)
         {
-            var response = await _mediator.Send(new ListaClienteporIdQuery(cliente));
+            var response = await _mediator.Send(new Criar(cliente);
 
             if (response.HasMessages)
             {

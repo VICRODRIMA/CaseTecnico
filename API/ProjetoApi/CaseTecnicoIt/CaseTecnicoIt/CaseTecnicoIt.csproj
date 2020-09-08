@@ -16,8 +16,5 @@
     <PackageReference Include="FluentValidation" Version="8.6.2" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Application\Commands\" />
-  </ItemGroup>
 
 </Project>

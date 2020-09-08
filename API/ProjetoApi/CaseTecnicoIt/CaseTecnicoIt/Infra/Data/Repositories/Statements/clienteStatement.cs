@@ -11,5 +11,8 @@ namespace CaseTecnicoIt.Infra.Data.Repositories.Statements
         UPDATE cliente SET
 	        nomeCliente = @nomeCliente
         WHERE idCliente = @Id";
+
+        public static string Inserir = $@"
+        INSERT INTO cliente (nomeCliente, idCliente) VALUES  @nomeCliente, @Id";
     }
 }
