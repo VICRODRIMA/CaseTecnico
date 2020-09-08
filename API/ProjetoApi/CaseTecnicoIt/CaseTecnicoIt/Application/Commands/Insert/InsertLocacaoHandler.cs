@@ -14,6 +14,7 @@ namespace CaseTecnicoIt.Application.Commands.Insert
     {
         private readonly ILogger<InsertLocacaoHandler> _logger;
         private readonly ILocacaoRepository _locacaoRepository;
+        private readonly IFilmesRepository _filmeRepository;
         public InsertLocacaoHandler(ILogger<InsertLocacaoHandler> logger, ILocacaoRepository locacaoRepository)
         {
             _logger = logger;
@@ -36,8 +37,14 @@ namespace CaseTecnicoIt.Application.Commands.Insert
             };
 
 
+            var filmeAtivo = _filmeRepository.BuscaFilmeAtivoPorID(request.idFilme.ToString());
 
-            await _locacaoRepository.criarLocacao(locaca);
+            if (!(filmeAtivo is null))
+            {
+                await _locacaoRepository.criarLocacao(locaca);
+            }
+           else
+                response.AddError("Filme não ativo, não é possivel locar");
 
             return response;
         }

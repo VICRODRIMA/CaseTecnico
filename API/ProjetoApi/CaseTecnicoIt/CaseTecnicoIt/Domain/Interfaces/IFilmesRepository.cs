@@ -10,6 +10,7 @@ namespace CaseTecnicoIt.Domain.Interfaces
     {
         Task CriarFilme(Filmes film);
         Task<Filmes> BuscaFilmePorId(string id);
+        Task<Filmes> BuscaFilmeAtivoPorID(string id);
         Task<Filmes> BuscaFilmePorNome(string nomeFilme);
         Task AtualizarFilme(Filmes film);
     }

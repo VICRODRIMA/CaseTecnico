@@ -21,6 +21,8 @@ namespace CaseTecnicoIt.Infra.Data.Repositories
         public async Task AtualizarFilme(Filmes film) => await ExecutarAtualizar(film);
         public async Task<Filmes> BuscaFilmePorNome(string nomeFilme)
                 => await GetConnection().QueryFirstOrDefaultAsync<Filmes>("select * from filmes where nomeFilme = @nomeFilme", new { nomeFilme });
+        public async Task<Filmes> BuscaFilmeAtivoPorID(string id)
+         => await GetConnection().QueryFirstOrDefaultAsync<Filmes>("select * from filmes where ativo =1 and idFilme = @id", new { id });
 
         public async Task<Filmes> BuscaFilmePorId(string id)
          => await GetConnection().QueryFirstOrDefaultAsync<Filmes>("select * from filmes where idFilme = @id", new { id });
