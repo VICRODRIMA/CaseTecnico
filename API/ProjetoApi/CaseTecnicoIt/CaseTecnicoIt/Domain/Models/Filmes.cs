@@ -7,7 +7,7 @@ namespace CaseTecnicoIt.Domain.Models
 {
     public class Filmes
     {
-        public Guid idFilme { get; set; }
+        public int? idFilme { get; set; }
         public string nomeFilme { get; set; }
         public string anoLancamento { get; set; }
 

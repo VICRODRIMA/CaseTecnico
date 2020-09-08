@@ -23,11 +23,13 @@
 
             _logger.LogInformation($"Iniciando o Handle de obter um cliente por ID: {request.Id}");
 
-            var filme = await _clienteRepository.BuscaporId(request.Id);
+            var client = await _clienteRepository.BuscaporId(request.Id);
 
             //aqui por exemplo vc pode verificar se o filme está com atraso de devolução entre outras regras.
-            if (filme is null)
+            if (client is null)
                 response.AddError("Cliente não encontrado");
+
+            response = new Response(client);
 
             return response;
         }

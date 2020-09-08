@@ -21,7 +21,7 @@ namespace CaseTecnicoIt.Controllers
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new Locacoes
             {
-                idLocacao = Guid.NewGuid(),
+                idLocacao = 2,
                 idCliente=  2,
                 dtLocacao = DateTime.Now.ToLongDateString()
             })

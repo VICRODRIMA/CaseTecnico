@@ -28,7 +28,12 @@ namespace CaseTecnicoIt.Application.Commands.Insert
                 nomeCliente = request.nomeCliente
             };
 
-            await _clienteRepository.CriarCliente(testecliente);
+            var cliente = _clienteRepository.BuscaporNome(request.nomeCliente);
+
+            if (cliente is null)
+            {
+                await _clienteRepository.CriarCliente(testecliente);
+            }
 
             return response;
         }

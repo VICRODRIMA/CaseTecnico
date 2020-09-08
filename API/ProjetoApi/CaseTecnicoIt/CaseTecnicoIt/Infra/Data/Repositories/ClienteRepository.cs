@@ -18,15 +18,12 @@ namespace CaseTecnicoIt.Infra.Data.Repositories
         {
         }
 
-        public async Task CriarCliente(Cliente client) => await ExecutarRegistrar(client);
-
-        public async Task AtualizarCliente(Cliente client) => await ExecutarAtualizar(client);
-        public async Task<Cliente> ListaClientes()
-        => await GetConnection().QueryFirstOrDefaultAsync<Cliente>("select * from clientes");
+        public async Task CriarCliente(Cliente client) => await ExecutarRegistrar(client);  
 
         public async Task<Cliente> BuscaporId(string id)
          => await GetConnection().QueryFirstOrDefaultAsync<Cliente>("select * from clientes where idcliente = @id", new { id });
-
+        public async Task<Cliente> BuscaporNome(string nomeCliente)
+       => await GetConnection().QueryFirstOrDefaultAsync<Cliente>("select * from clientes where nomeCliente = @nomeCliente", new { nomeCliente });
         private async Task ExecutarRegistrar(Cliente client)
         {
             try
@@ -47,6 +44,8 @@ namespace CaseTecnicoIt.Infra.Data.Repositories
             }
         }
 
+        public async Task AtualizarCliente(Cliente client) => await ExecutarAtualizar(client);
+
         private async Task ExecutarAtualizar(Cliente client)
         {
             try
@@ -57,7 +56,8 @@ namespace CaseTecnicoIt.Infra.Data.Repositories
                     await conn.ExecuteAsync(clienteStatement.Atualizar,
                         new
                         {
-                            client.nomeCliente
+                            client.nomeCliente,
+                            client.idCliente
                         });
                 }
             }

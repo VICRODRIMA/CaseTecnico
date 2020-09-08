@@ -8,9 +8,9 @@ namespace CaseTecnicoIt.Infra.Data.Repositories.Statements
     internal static class clienteStatement
     {
         public static string Atualizar = $@"
-        UPDATE cliente SET
+        UPDATE clienteS SET
 	        nomeCliente = @nomeCliente
-        WHERE idCliente = @Id";
+        WHERE idCliente = @idCliente";
 
         public static string Inserir = $@"
         INSERT INTO clientes (nomeCliente)  VALUES  (

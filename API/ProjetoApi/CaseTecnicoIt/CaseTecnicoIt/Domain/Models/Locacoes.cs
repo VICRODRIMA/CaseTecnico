@@ -7,7 +7,7 @@ namespace CaseTecnicoIt.Domain.Models
 {
     public class Locacoes
     {
-        public Guid idLocacao { get; set; }
+        public int? idLocacao { get; set; }
         public int idCliente { get; set; }
         public string dtLocacao { get; set; }
 

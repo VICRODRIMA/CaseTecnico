@@ -18,7 +18,8 @@ namespace CaseTecnicoIt.Infra.Data.Repositories
         {
         }
         public async Task CriarFilme(Filmes film) => await ExecutarRegistrar(film);
-        public async Task AtualizarFilme (Filmes film) => await ExecutarAtualizar(film);
+        public async Task AtualizarFilme(Filmes film) => await ExecutarAtualizar(film);
+
         public async Task<Filmes> BuscaFilmePorId(string id)
          => await GetConnection().QueryFirstOrDefaultAsync<Filmes>("select * from filmes where idFilme = @id", new { id });
 
@@ -43,6 +44,7 @@ namespace CaseTecnicoIt.Infra.Data.Repositories
                 throw;
             }
         }
+
         private async Task ExecutarAtualizar(Filmes filme)
         {
             try

@@ -97,17 +97,7 @@ namespace CaseTecnicoIt
 
 
 
-        private static void DadosFake(ApiContext context)
-        {
-            var testecliente = new Cliente
-            {
-                nomeCliente = "victor"
-            };
-
-            context.clientes.Add(testecliente);
-
-            context.SaveChanges();
-        }
+      
 
     }
 }
